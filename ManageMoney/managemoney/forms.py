@@ -3,62 +3,67 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import User
 
 class LoginForm(forms.Form):
-    email = forms.EmailField(
-        widget = forms.EmailInput(
-            attrs = {
-                'class': 'form-control'
+    username = forms.CharField(
+        widget = forms.TextInput(attrs = {
+            'class': 'form-control',
+            'placeholder': 'Username'
             }
-        )
+        ) 
     )
 
     password = forms.CharField(
         widget = forms.PasswordInput(
             attrs = {
-            'class': 'form-control'
+            'class': 'form-control',
+            'placeholder': 'Password'
             }
         )
     )
 
 
 class RegistrationForm(UserCreationForm):
-    first_name = forms.CharField(
+    
+    username = forms.CharField(
         widget = forms.TextInput(attrs = {
-            'class': 'form-control'
-            }
-        ) 
-    )
-
-    last_name = forms.CharField(
-        widget = forms.TextInput(attrs = {
-            'class': 'form-control'
+            'class': 'form-control',
+            'placeholder': 'Username'
             }
         ) 
     )
 
     email = forms.EmailField(
+        max_length=60,
+        required=True,
         widget = forms.EmailInput(
             attrs = {
-                'class': 'form-control'
+                'class': 'form-control',
+                'placeholder': 'Email'
             }
         )
     )
 
     password1 = forms.CharField(
-        widget = forms.PasswordInput(
-            attrs = {
-            'class': 'form-control'
+        required=True,
+        label="Password",
+        widget=forms.PasswordInput(
+            attrs={
+                'class': 'form-control', 
+                'placeholder': 'Password'
             }
         )
     )
 
     password2 = forms.CharField(
-        widget = forms.PasswordInput(
-            attrs = {
-            'class': 'form-control'
+        required=True,
+        label="Password",
+        widget=forms.PasswordInput(
+            attrs={
+                'class': 'form-control', 
+                'placeholder': 'Password'
             }
         )
     )
 
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'email', 'password1', 'password2', 'is_admin', 'is_client')
+        fields = ('username', 'email', 'password1', 'password2')
