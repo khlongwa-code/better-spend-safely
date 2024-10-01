@@ -3,3 +3,8 @@ from .models import *
 # Register your models here
 
 admin.site.register(User)
+admin.site.register(Income)
+admin.site.register(Saving)
+admin.site.register(Budget)
+admin.site.register(Expense)
+admin.site.register(Transaction)
