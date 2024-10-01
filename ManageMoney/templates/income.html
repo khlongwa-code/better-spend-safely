@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Income</title>
+</head>
+<body>
+    <h1>Your Income</h1>
+    <ul>
+        {% for income in incomes %}
+            <li>{{ income.amount }} - {{ income.source }} ({{ income.date_received }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
