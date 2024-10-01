@@ -5,3 +5,5 @@ from django.contrib.auth.models import AbstractUser
 class User(AbstractUser):
     
     is_client = models.BooleanField('Is client', default=False)
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
