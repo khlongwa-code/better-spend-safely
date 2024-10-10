@@ -182,3 +182,27 @@ nav {
     font-size: 0.9em;
     font-weight: bold;
 }
+
+/* Centering the login button below the icons */
+.login-button {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.login-button button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 200px;
+    max-width: 100%;
+}
+
+/* Button hover effect */
+.login-button button:hover {
+    background-color: #45a049;
+}
