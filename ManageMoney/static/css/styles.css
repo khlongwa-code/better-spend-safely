@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+header {
+    background-color: #4CAF50;
+    width: 100%;
+    padding: 20px 0;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+/* Styling for the large clickable text */
+.big-text {
+    margin-top:10px; /* Moved the text closer to the header */
+    margin-bottom: 80px; /* Reduced space between the text and icons */
+}
+
+.big-text a {
+    font-size: 3em; /* Increased font size to make it stand out more */
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.big-text a:hover {
+    color: #4CAF50; /* Change color on hover */
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for the 6 items */
+    gap: 30px; /* Spacing between the icons */
+    justify-items: center;
+    align-items: center;
+}
+
+.icon-block {
+    background-color: white;
+    padding: 30px;
+    width: 220px;
+    height: 260px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.icon-block:hover {
+    transform: scale(1.05);
+}
+
+.icon-block img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+}
+
+.icon-block h2 {
+    font-size: 1.3em;
+    color: #333;
+    word-wrap: break-word;
+    max-width: 100%;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking App</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>My Banking App</h1>
+    </header>
+
+    <!-- Clickable large text -->
+    <div class="big-text">
+        <a href="#">> What's UniSave all about?</a>
+    </div>
+    
+    <div class="dashboard">
+        <div class="icon-block">
+            <img src="{% static 'images/income.png' %}" alt="Income Icon">
+            <h2>Income</h2>
+        </div>
+        <div class="icon-block">
+            <img src="{% static 'images/transaction.png' %}" alt="Transactions Icon">
+            <h2>Transactions</h2>
+        </div>
+        <div class="icon-block">
+            <img src="{% static 'images/budget.png' %}" alt="Budget Icon">
+            <h2>Budget</h2>
+        </div>
+        <div class="icon-block">
+            <img src="{% static 'images/savings.png' %}" alt="Savings Icon">
+            <h2>Savings</h2>
+        </div>
+        <div class="icon-block">
+            <img src="{% static 'images/expenses.png' %}" alt="Expenses Icon">
+            <h2>Expenses</h2>
+        </div>
+        <div class="icon-block">
+            <img src="{% static 'images/simulator.png' %}" alt="Simulator Icon">
+            <h2>Simulator</h2>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 My Banking App</p>
+    </footer>
+</body>
+</html>

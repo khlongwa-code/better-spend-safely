@@ -7,7 +7,7 @@ from .models import *
 
 # Home page
 def home_view(request):
-    return render(request, 'home.html')
+    return render(request, 'base.html')
 
 # Sign up (registration) page
 def signup_view(request):
