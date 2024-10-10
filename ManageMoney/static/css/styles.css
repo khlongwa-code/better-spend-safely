@@ -96,3 +96,89 @@ footer {
     bottom: 0;
     text-align: center;
 }
+
+/* Navbar styling */
+nav {
+    width: 100%;
+    background-color: #4CAF50;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo and UniSave text */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img.logo-icon {
+    width: 40px; /* Adjust the size of the logo icon */
+    height: 40px;
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.logo a {
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 5px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #333;
+    border-radius: 5px;
+}
+
+/* Notifications Section */
+.notifications {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.notifications img.notification-icon {
+    width: 35px;
+    height: 35px;
+}
+
+.notification-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 4px 8px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
