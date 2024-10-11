@@ -13,6 +13,7 @@ body {
     justify-content: center;
     height: 100vh;
     text-align: center;
+    margin: 0;
 }
 
 header {
@@ -206,3 +207,104 @@ nav {
 .login-button button:hover {
     background-color: #45a049;
 }
+
+
+
+
+.form-container {
+    background-color: #ffffff; /* White background for forms */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    width: 300px; /* Fixed width for forms */
+    text-align: center; /* Center text */
+}
+
+h2 {
+    margin-bottom: 20px; /* Space below heading */
+    color: #333; /* Darker text color */
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+}
+
+form p {
+    margin: 15px 0; /* Space around paragraph */
+    color: #666; /* Grey text for the paragraph */
+}
+
+button {
+    padding: 10px; /* Padding for buttons */
+    background-color: #4CAF50; /* Button color */
+    color: white; /* White text for buttons */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+a {
+    text-decoration: none; /* Remove underline from links */
+    color: #4CAF50; /* Link color */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* The Modal (background) */
+.modal {
+    
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: white;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px; /* Fixed width */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Add shadow */
+    position: relative;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Add some margin to input fields in the form */
+.modal-content input {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+

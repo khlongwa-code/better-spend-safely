@@ -35,9 +35,15 @@
         </div>
     </nav>
 
-    <!-- Clickable large text -->
     <div class="big-text">
-        <a href="#">> What's UniSave all about?</a>
+        <!-- The text will be modified by the JavaScript based on user status -->
+        <a href="#" id="welcomeText">
+            {% if registered_user %}
+                Welcome, {{ registered_user }} ! <!-- This will be replaced by JS if needed -->
+            {% else %}
+                Create an account to continue
+            {% endif %}
+        </a>
     </div>
     
     <!-- Dashboard with icons -->
@@ -69,12 +75,133 @@
     </div>
 
     <div class="login-button">
-        <button>Login</button>
+        {% if show_signup_button %}
+            <button onclick="toggleSignUpForm()" id="signupBtn">Sign Up</button>
+        {% endif %}
+        {% if show_login_button %}
+            <button onclick="toggleLoginForm()" id="loginBtn">Sign In</button>
+        {% endif %}
+        {% if show_signout_button %}
+            <button id="logoutBtn">Sign Out</button>
+        {% endif %}
+    </div>
+    
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="form-container">
+                <h2>Login</h2>
+                <form method="POST" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <label for="username">Username</label>
+                    {{ login_form.username }}
+
+                    <label for="password">Password</label>
+                    {{ login_form.password }}
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="form-container">
+                <h2>SignUp</h2>
+                <form method="POST" action="{% url 'signup' %}">
+                    {% csrf_token %}
+                    <label for="firstname">First name:</label>
+                    {{ signup_form.first_name }}
+
+                    <label for="lastname">Last name:</label>
+                    {{ signup_form.last_name }}
+
+                    <label for="email">Email:</label>
+                    {{ signup_form.email }}
+
+                    <label for="username">Username:</label>
+                    {{ signup_form.username }}
+
+                    <label for="password">Password</label>
+                    {{ signup_form.password1 }}
+
+                    <label for="password">Confirm Password:</label>
+                    {{ signup_form.password2 }}
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
     </div>
 
     <footer>
         <p>&copy; 2024 My Banking App</p>
     </footer>
 
+    <script>
+        var modal = document.getElementById("loginModal");
+        var loginBtn = document.getElementById("loginBtn");
+        var closeBtn = document.getElementsByClassName("close")[0];
+
+        loginBtn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        
+
+        var signupModal = document.getElementById("signupModal");
+        var signupBtn = document.getElementById("signupBtn");
+        var closeSignupBtn = document.getElementsByClassName("close")[1];
+
+        signupBtn.onclick = function() {
+            signupModal.style.display = "block";
+        }
+
+        closeSignupBtn.onclick = function() {
+            signupModal.style.display = "none";
+        }
+
+        function toggleSignUpForm() {
+            var signupModal = document.getElementById("signupModal");
+            signupModal.style.display = signupModal.style.display === "block" ? "none" : "block";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal || event.target == signupModal) {
+                modal.style.display = "none";
+                signupModal.style.display = "none";
+            }
+        }
+
+        
+
+        window.onload = function() {
+            const registeredUser = "{{ registered_user }}"; // Ensure this is None or an empty string if no user is logged in
+            const bigTextElement = document.querySelector('.big-text a');
+            const loginBtn = document.getElementById('loginBtn');
+            const signupBtn = document.getElementById('signupBtn');
+
+            // Trim the registeredUser variable to avoid "Welcome back, None" when it should show "Create an account"
+            if (registeredUser && registeredUser.trim() !== '') {
+                bigTextElement.textContent = `Welcome back, ${registeredUser}`;
+                loginBtn.textContent = 'Login';
+                loginBtn.style.display = 'block'; 
+                signupBtn.style.display = 'none'; // Hide the signup button
+            } else {
+                bigTextElement.textContent = 'Create an account to continue';
+                signupBtn.style.display = 'block'; // Show the signup button
+            }
+        }
+
+
+    </script>
 </body>
 </html>
